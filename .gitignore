@@ -1,7 +1,10 @@
 # Eclipse
-/.settings
-/*.classpath
-/*.project
+.settings
+.classpath
+.project
 
 # Maven
-/target
+target
+
+#Spring
+.springBeans
