@@ -10,12 +10,14 @@
 
 	<mvc:annotation-driven/>
 	<context:component-scan base-package="com.pluralsight.controller"/>
-	
 	<mvc:resources location="pdfs" mapping="/pdfs/**"/>
 	
+	<mvc:interceptors>
+		<bean class="org"></bean>
+	</mvc:interceptors>
 	
+	<bean id="localResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" p:defaultLocale="en"></bean>
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basename="messages"></bean>
-	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 	p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
 
