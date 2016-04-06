@@ -13,6 +13,9 @@
 	
 	<mvc:resources location="pdfs" mapping="/pdfs/**"/>
 	
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basename="messages"></bean>
+	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 	p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
 
