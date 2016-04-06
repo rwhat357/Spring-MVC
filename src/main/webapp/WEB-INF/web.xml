@@ -17,6 +17,11 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 
+	<servlet-mapping>
+		<servlet-name>fitTrackerServlet</servlet-name>
+		<url-pattern>/pdfs/**</url-pattern>
+	</servlet-mapping>
+
   <display-name>Archetype Created Web Application</display-name>
   
 </web-app>
