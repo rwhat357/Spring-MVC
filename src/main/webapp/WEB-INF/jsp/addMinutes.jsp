@@ -29,6 +29,7 @@ Language: <a href="?language=en">English</a> | <a href="?language=es">Spanish</a
 	</table>
 </forms:form>
 
+<h1> Our goal for today is: ${goal.minutes }</h1>
 
 </body>
 </html>
