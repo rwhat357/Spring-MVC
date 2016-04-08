@@ -6,5 +6,5 @@ Testing Spring MVC from https://app.pluralsight.com/library/courses/springmvc-in
 - `git clone https://github.com/rwhat357/Spring-MVC.git`
 - Import to Spring STS as Maven project
 - run on server (Tomcat preferably)
-	- to see the app go to `http://localhost:8080/FitnessTracker/greeting.html`
+	- to see the app go to [http://localhost:8080/FitnessTracker/greeting.html](`http://localhost:8080/FitnessTracker/greeting.html`)
 	
