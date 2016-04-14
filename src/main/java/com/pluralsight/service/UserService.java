@@ -10,5 +10,9 @@ public class UserService {
 	public User getUserById(int id) {
 		return userDAO.getUserById(id);
 	}
+	
+	public void getAll() {
+		userDAO.getAll();
+	}
 
 }

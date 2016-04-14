@@ -26,6 +26,7 @@ public class HomeController {
 //		log.fatal("This is fatal in home controller");
 		
 		User user = userService.getUserById(1);
+		userService.getAll();
 		
 		model.addAttribute("user", user);
 		model.addAttribute("greeting", "asdfs world");
