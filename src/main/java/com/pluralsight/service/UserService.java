@@ -1,5 +1,7 @@
 package com.pluralsight.service;
 
+import java.util.List;
+
 import com.pluralsight.DAO.UserDAO;
 import com.pluralsight.model.User;
 
@@ -11,8 +13,8 @@ public class UserService {
 		return userDAO.getUserById(id);
 	}
 	
-	public void getAll() {
-		userDAO.getAll();
+	public List<User> getAll() {
+		return userDAO.getAll();
 	}
 
 }

@@ -1,11 +1,14 @@
 package com.pluralsight.DAO;
 
-import com.pluralsight.model.User;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.pluralsight.model.User;
 public class UserDAO {
 
 	// JDBC driver name and database URL
@@ -16,9 +19,10 @@ public class UserDAO {
 	static final String USER = "root";
 	static final String PASS = "admin";
 	
-	public  void getAll(){
+	public  List<User> getAll(){
 		Connection conn = null;
 		Statement stmt = null;
+		List<User> users = new ArrayList<User>();
 		try {
 			// STEP 2: Register JDBC driver
 			Class.forName(JDBC_DRIVER);
@@ -35,22 +39,18 @@ public class UserDAO {
 			ResultSet rs = stmt.executeQuery(sql);
 
 			// STEP 5: Extract data from result set
+			User user;
 			while (rs.next()) {
+				user = new User();
+				
 				// Retrieve by column name
-				int id = rs.getInt("id");
-				String username = rs.getString("username");
-				String firstname = rs.getString("firstname");
-				String lastname = rs.getString("lastname");
-				String email = rs.getString("email");
-				String password = rs.getString("password");
-
-				// Display values
-				System.out.print("id: " + id);
-				System.out.print(", username: " + username);
-				System.out.print(", username: " + username);
-				System.out.println(", lastname: " +lastname);
-				System.out.println(", email: " +email);
-				System.out.println(", password: " + password);
+				user.setId(rs.getInt("id"));
+				user.setUsername(rs.getString("username"));
+				user.setFirstname(rs.getString("firstname"));
+				user.setLastname(rs.getString("lastname"));
+				user.setEmail(rs.getString("email"));
+				user.setPassword(rs.getString("password"));
+				users.add(user);
 			}
 			// STEP 6: Clean-up environment
 			rs.close();
@@ -76,7 +76,10 @@ public class UserDAO {
 				se.printStackTrace();
 			} // end finally try
 		} // end try
-		System.out.println("Goodbye!");
+		
+		return users;
+		
+		
 	}
 	
 	public User getUserById(int id) {
